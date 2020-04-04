@@ -7,8 +7,28 @@ public class BinaryTreeNodePath {
 	public static ArrayList<Integer> output=new ArrayList<Integer>();
 	public static boolean nodePath(BinaryTreeNode<Integer> root,int data)
 	{
-		
+		//EFFICIENT
 		if(root==null)
+			return false;
+		
+		if(root.data==data)
+			return true;
+		boolean left=nodePath(root.left,data);
+		if(left)
+		{
+			output.add(root.left.data);
+			return left;
+		}
+			
+		boolean right=nodePath(root.right,data);
+		if(right)
+		{
+			output.add(root.right.data);
+			return right;
+		}
+			return false;
+		//2nd Way
+		/*if(root==null)
 			return false;
 		
 		if(root.data==data)
@@ -19,7 +39,7 @@ public class BinaryTreeNodePath {
 			output.add(root.left.data);
 		if(right)
 			output.add(root.right.data);
-		return left||right;
+		return left||right;*/
 		
 	}
 	public static void main(String[] args) {
