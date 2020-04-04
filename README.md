@@ -2,5 +2,4 @@
 
 -> TREES
 -> BINARY TREE
-Upcomming
--> BINARY SEARCH TREE
+-> BINARY SEARCH TREE (UpNext)
